@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ContosoUniversity.ViewModels.EnrollmentDateGroup>
+
+@{
+    ViewBag.Title = "Students Body Statistics";
+}
+
+<h2>Students Body Statistics</h2>
+
+<table>
+    <tr>
+        <th>Enrollment Date</th>
+        <th>Students</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.EnrollmentDate)</td>
+            <td>@item.StudentCount</td>
+        </tr>
+    }
+</table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
